@@ -11,6 +11,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -42,7 +43,7 @@ let g:coc_global_extensions = [
 " Mappings
 map <C-p> :Files<CR>
 imap jj <Esc>
-nmap <C-space> :CocCommand explorer<CR>
+nmap <C-b> :CocCommand explorer<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
