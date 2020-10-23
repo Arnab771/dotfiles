@@ -1,0 +1,9 @@
+export PATH=$PATH:$HOME/Programming/.flutter/bin/
+export PATH=$PATH:$HOME/Programming/cmdline-tools/tools/bin/
+export PATH=$PATH:$HOME/Applications
+export ANDROID_SDK_ROOT="/home/arnab/Programming/.Android/Sdk/"
+export ANDROID_HOME="/home/arnab/Programming/.Android/Sdk/"
+export BAT_THEME="Monokai Extended Origin"
+export CHROME_EXECUTABLE="/usr/bin/chromium"
+export EDITOR=nvim
+export BROWSER="/usr/bin/firefox"
