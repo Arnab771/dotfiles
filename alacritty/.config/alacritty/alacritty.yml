@@ -574,8 +574,8 @@ background_opacity: 0.94
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - { key: V,         mods: Control,             action: Paste          }
-  - { key: C,         mods: Control,             action: Copy           }
+  #- { key: V,         mods: Control,             action: Paste          }
+  #- { key: C,         mods: Control,             action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
   #- { key: L,         mods: Control, mode: ~Vi,  chars: "\x0c"          }
   - { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
