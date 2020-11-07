@@ -60,7 +60,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Airline Theme
 "let g:airline_theme='deus'
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "tokyonight"
+let g:airline_theme = 'tokyonight'
 
 " Color scheme
 source ~/.config/nvim/themes/tokyonight.vim
