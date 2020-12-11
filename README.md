@@ -8,6 +8,7 @@ stow neovim
 stow newsboat
 stow vscode
 stow zsh
+stow mpv
 ```
 
 ## Zsh
