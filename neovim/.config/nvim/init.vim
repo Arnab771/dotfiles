@@ -21,8 +21,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
+
+let g:vimwiki_list = [{'path': '/media/veracrypt1/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md',
+                      \ 'auto_diary_index': 1}]
 
 " coc extensions
 let g:coc_global_extensions = [

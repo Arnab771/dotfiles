@@ -118,6 +118,16 @@ function update(){
 	flatpak update -y
 }
 
+function uploadPswd(){
+	rclone sync -v ~/Documents/KeePassXC/Databases/ GDrive:KeePassXC
+}
+
+function downloadPswd(){
+	rclone sync -v GDrive:KeePassXC ~/Documents/KeePassXC/Databases/
+}
+
+
+
 alias organize-downloads='py /home/arnab/Programming/Download-folder-organizer/main.py'
 alias yt-audio='youtube-dl -i --extract-audio --audio-format mp3 --audio-quality 0'
 alias mnt-encrypted='veracrypt /home/arnab/.volume /media/veracrypt1'
@@ -126,7 +136,7 @@ alias private-firefox='firejail --nonewprivs --private --private-dev --private-t
 alias rmt='trash'
 alias ls='exa -l --color=always --group-directories-first --icons --git'
 alias py='python3'
-alias vpnc='sudo protonvpn c -f'
+alias vpnc='sudo protonvpn c'
 alias vpnd='sudo protonvpn d'
 alias vpns='protonvpn status'
 alias battery_info='upower -i /org/freedesktop/UPower/devices/battery_BAT1'

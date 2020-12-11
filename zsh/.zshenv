@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/Programming/.flutter/bin/
+#export PATH=$PATH:$HOME/Programming/.flutter/bin/
 export PATH=$PATH:$HOME/Programming/cmdline-tools/tools/bin/
 export PATH=$PATH:$HOME/Applications
 export ANDROID_SDK_ROOT="/home/arnab/Programming/.Android/Sdk/"
