@@ -22,11 +22,16 @@ Install all extensions
 code --install-extension azemoh.one-monokai
 code --install-extension Dart-Code.dart-code
 code --install-extension Dart-Code.flutter
+code --install-extension esbenp.prettier-vscode
+code --install-extension GrapeCity.gc-excelviewer
 code --install-extension jeroen-meijer.pubspec-assist
+code --install-extension kisstkondoros.vscode-gutter-preview
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode.cpptools
 code --install-extension PKief.material-icon-theme
+code --install-extension usernamehw.errorlens
 code --install-extension vscodevim.vim
 ```
 
