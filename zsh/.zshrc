@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 neofetch
+~/.random_image
 
 function update(){
 	sudo snap refresh

@@ -21,7 +21,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
