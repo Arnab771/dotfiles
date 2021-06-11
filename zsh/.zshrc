@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 
 neofetch
 ~/.random_image
+theme aci
 
 function update(){
 	sudo snap refresh
@@ -146,3 +147,6 @@ alias random-rename='python3 Programming/Random-rename/random-rename.py'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export SPICETIFY_INSTALL="/home/arnab/Applications/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"

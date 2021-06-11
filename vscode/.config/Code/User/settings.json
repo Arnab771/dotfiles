@@ -1,6 +1,6 @@
 {
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "One Monokai",
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
     "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "workbench.settings.editor": "json",
