@@ -2,7 +2,6 @@
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
     "workbench.iconTheme": "material-icon-theme",
-    "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
@@ -34,10 +33,13 @@
             "after": ["<Esc>"]
         }
     ],
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ]
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    
+    "[python]": {
+        "editor.formatOnSave": false
+    }
+      
 }

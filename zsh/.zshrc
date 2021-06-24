@@ -15,7 +15,7 @@ export ZSH="/home/arnab/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,11 +107,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-neofetch
-~/.random_image
-theme aci
+colorscript random
+#~/.random_image
+theme.sh amora
 
 function update(){
 	sudo snap refresh
@@ -144,9 +144,12 @@ alias vpns='protonvpn status'
 alias battery_info='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias adl='adl -p celluloid'
 alias random-rename='python3 Programming/Random-rename/random-rename.py'
+alias btop='bpytop'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export SPICETIFY_INSTALL="/home/arnab/Applications/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
+
+eval "$(starship init zsh)"
