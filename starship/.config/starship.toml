@@ -1,11 +1,11 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
-command_timeout = 1000
+command_timeout = 4000
 
 # makes prompt a single line
 [line_break]
-disabled = false
+disabled = true
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -17,7 +17,7 @@ format = "took [$duration]($style)"
 
 [character]
 error_symbol = "[X](bold red) "
-success_symbol = "[➜](bold green)"
+#success_symbol = "[➜](bold green)"
 
 # These symbols will only show when battery levels are 20% or less
 [battery]

@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 
 colorscript random
 #~/.random_image
-theme.sh amora
+theme.sh dracula
 
 function update(){
 	sudo snap refresh
