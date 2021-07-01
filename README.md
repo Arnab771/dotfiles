@@ -9,10 +9,13 @@ stow newsboat
 stow vscode
 stow zsh
 stow mpv
+stow awesome
+stow rofi
+stow picom
 ```
 
 ## Zsh
-Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/) and then [poewrlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/) and then get [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
