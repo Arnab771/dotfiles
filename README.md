@@ -62,9 +62,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 Node and clangd must be installed. 
 
-## Xidlehook
-Install [xidlehook](https://github.com/jD91mZM2/xidlehook) through [Nix Package Manager](https://nixos.org/guides/install-nix.html) for locker
-
 ## Awesome
 ### Animations and Blur
 To get animations and blur install [Picom](https://github.com/jonaburg/picom)
+
+### Betterlockscreen
+Install [Betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen#requirements) in `/usr/local/bin/` for using as locker
+
+### Xidlehook
+Install [xidlehook](https://github.com/jD91mZM2/xidlehook) through [Nix Package Manager](https://nixos.org/guides/install-nix.html) for locker
+
+
