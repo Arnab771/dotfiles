@@ -62,5 +62,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 Node and clangd must be installed. 
 
-##Xidlehook
+## Xidlehook
 Install [xidlehook](https://github.com/jD91mZM2/xidlehook) through [Nix Package Manager](https://nixos.org/guides/install-nix.html) for locker
