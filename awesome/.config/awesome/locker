@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xautolock  -time 5 -locker "betterlockscreen -l dim" &
+xidlehook --not-when-fullscreen --timer 420 "systemctl suspend" - 
