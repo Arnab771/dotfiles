@@ -16,9 +16,9 @@ stow picom
 
 ## Zsh
 Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/) and then get [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) 
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 ## VSCode
 Install all extensions
@@ -61,3 +61,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 - coc-clangd
 
 Node and clangd must be installed. 
+
+##Xidlehook
+Install [xidlehook](https://github.com/jD91mZM2/xidlehook) through [Nix Package Manager](https://nixos.org/guides/install-nix.html) for locker
