@@ -1,6 +1,6 @@
 {
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,

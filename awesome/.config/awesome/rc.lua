@@ -100,7 +100,7 @@ local themes = {
 local chosen_theme = themes[7]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "xfce4-terminal"
+local terminal     = "alacritty"
 local vi_focus     = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
 local editor       = os.getenv("EDITOR") or "nvim"
@@ -693,6 +693,7 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+          "xdman-Main",
           "Veracrypt",
           "Arandr",
           "Blueman-manager",
@@ -807,3 +808,5 @@ awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("locker")
+--awful.spawn.with_shell("battery_full_alert")
+awful.spawn.with_shell("kdeconnect-indicator")
