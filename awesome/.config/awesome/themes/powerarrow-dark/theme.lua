@@ -16,12 +16,11 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 9"
 theme.fg_normal                                 = "#DDDDFF"
 theme.fg_focus                                  = "#8f4c8e"
 theme.fg_urgent                                 = "#CC9393"
-theme.bg_normal                                 = "#141313"
+theme.bg_normal                                 = "#141313E6"
 theme.bg_focus                                  = "#363030"
 theme.bg_urgent                                 = "#1A1A1A"
 theme.border_width                              = dpi(1)
@@ -273,13 +272,6 @@ local arrl_ld = separators.arrow_left("alpha", theme.bg_focus)
 function theme.at_screen_connect(s)
     -- Quake application
     s.quake = lain.util.quake({ app = awful.util.terminal })
-
-    -- If wallpaper is a function, call it with the screen
-    local wallpaper = theme.wallpaper
-    if type(wallpaper) == "function" then
-        wallpaper = wallpaper(s)
-    end
-    gears.wallpaper.maximized(wallpaper, s, true)
 
     -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts)
