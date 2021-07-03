@@ -1,4 +1,4 @@
 #!/bin/sh
 
-xautolock -detectsleep -time 5 -locker "betterlockscreen -l dim" 
-xidlehook --not-when-fullscreen --timer 420 "systemctl suspend" - 
+exec xidlehook --not-when-audio --not-when-fullscreen --detect-sleep --timer 300 "betterlockscreen -l dim" - & 
+exec xidlehook --not-when-audio --not-when-fullscreen --timer 420 "systemctl suspend" - 
