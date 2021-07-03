@@ -9,5 +9,5 @@ for (dirpath, dirname, filename) in os.walk(path):
 
 for name in orgNames:
     if name[-3: ] == "jpg" or name[-3: ] == "png" or name[-3: ] == "jpeg":
-        randName = str(random.randint(45600, 78904)) + name[-4: ]
+        randName = str(random.randint(45600, 999999)) + name[-4: ]
         os.rename(path + name, path + randName)
