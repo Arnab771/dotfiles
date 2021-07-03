@@ -7,4 +7,4 @@ export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
 export BAT_THEME="Monokai Extended Origin"
 export CHROME_EXECUTABLE="/snap/bin/chromium"
 export EDITOR=nvim
-export BROWSER="/usr/bin/firefox"
+export BROWSER="/usr/bin/brave-browser"
