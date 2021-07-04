@@ -1,6 +1,5 @@
 #!/bin/sh
 
-kill -9 $(ps -e | grep "xidlehook" | awk 'NR==1{ print $1 }')
-kill -9 $(ps -e | grep "xidlehook" | awk 'NR==1{ print $1 }')
+killall -q xidlehook
 exec xidlehook --not-when-audio --not-when-fullscreen --detect-sleep --timer 300 "betterlockscreen -l dim" - & 
 exec xidlehook --not-when-audio --not-when-fullscreen --timer 420 "systemctl suspend" - 
