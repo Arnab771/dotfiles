@@ -806,7 +806,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart applications
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("feh --bg-fill ~/Pictures/wallpaper/923275.jpg")
 awful.spawn.with_shell("locker")
 --awful.spawn.with_shell("battery_full_alert")
 awful.spawn.with_shell("kdeconnect-indicator")
