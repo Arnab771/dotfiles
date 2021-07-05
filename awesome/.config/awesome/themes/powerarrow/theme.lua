@@ -18,18 +18,18 @@ local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "JetBrains Mono Medium 10"
-theme.fg_normal                                 = "#FEFEFEB3"
-theme.fg_focus                                  = "#32D6FFB3"
-theme.fg_urgent                                 = "#C83F11B3"
-theme.bg_normal                                 = "#222222B3"
-theme.bg_focus                                  = "#1E2320B3"
+theme.fg_normal                                 = "#FFFFFFB3"
+theme.fg_focus                                  = "#A77AC4B3"
+theme.fg_urgent                                 = "#b74822B3"
+theme.bg_normal                                 = "#282a36B3"
+theme.bg_focus                                  = "#FF79C6B3"
 theme.bg_urgent                                 = "#3F3F3FB3"
-theme.taglist_fg_focus                          = "#00CCFFB3"
-theme.tasklist_bg_focus                         = "#222222B3"
-theme.tasklist_fg_focus                         = "#00CCFFB3"
-theme.border_width                              = dpi(4)
-theme.border_normal                             = "#3F3F3FB3"
-theme.border_focus                              = "#6F6F6FB3"
+theme.taglist_fg_focus                          = "#282a36B3"
+theme.tasklist_bg_focus                         = "#000000B3"
+theme.tasklist_fg_focus                         = "#A77AC4B3"
+theme.border_width                              = dpi(2)
+theme.border_normal                             = "#282a36B3"
+theme.border_focus                              = "#F07178B3"
 theme.border_marked                             = "#CC9393B3"
 theme.titlebar_bg_focus                         = "#3F3F3FB3"
 theme.titlebar_bg_normal                        = "#3F3F3FB3"
@@ -178,7 +178,7 @@ theme.mpd = lain.widget.mpd({
             artist = " " .. mpd_now.artist .. " "
             title  = mpd_now.title  .. " "
             mpdicon:set_image(theme.widget_music_on)
-            widget:set_markup(markup.font(theme.font, markup("#FF8466", artist) .. " " .. title))
+            widget:set_markup(markup.font(theme.font, markup("#FFFFFF", artist) .. " " .. title))
         elseif mpd_now.state == "pause" then
             widget:set_markup(markup.font(theme.font, " mpd paused "))
             mpdicon:set_image(theme.widget_music_pause)
@@ -332,9 +332,6 @@ function theme.at_screen_connect(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
-
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(21), bg = theme.bg_normal, fg = theme.fg_normal })
 
@@ -366,27 +363,24 @@ function theme.at_screen_connect(s)
             pl(binclock.widget, "#777E76"),
             --]]
             -- using separators
-            arrow(theme.bg_normal, "#343434"),
-            wibox.container.background(wibox.container.margin(wibox.widget { mailicon, theme.mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
-            arrow("#343434", theme.bg_normal),
-            wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), theme.bg_focus),
-            arrow(theme.bg_normal, "#343434"),
-            wibox.container.background(wibox.container.margin(task, dpi(3), dpi(7)), "#343434"),
-            arrow("#343434", "#777E76"),
-            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#777E76"),
-            arrow("#777E76", "#4B696D"),
-            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#4B696D"),
-            arrow("#4B696D", "#4B3B51"),
-            wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#4B3B51"),
-            arrow("#4B3B51", "#CB755B"),
-            wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#CB755B"),
-            arrow("#CB755B", "#8DAA9A"),
-            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#8DAA9A"),
-            arrow("#8DAA9A", "#C0C0A2"),
-            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#C0C0A2"),
-            arrow("#C0C0A2", "#777E76"),
-            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), "#777E76"),
-            arrow("#777E76", "alpha"),
+            
+            arrow("alpha", "#7197E7"),
+            wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#7197E7"),
+            arrow("#7197E7", "#A77AC4"),
+            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#A77AC4"),
+            arrow("#A77AC4", "#7197E7"),
+            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#7197E7"),
+            arrow("#7197E7", "#A77AC4"),
+            wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#A77AC4"),
+            arrow("#A77AC4", "#7197E7"),
+            wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#7197E7"),
+            arrow("#7197E7", "#A77AC4"),
+            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#A77AC4"),
+            arrow("#A77AC4", "#7197E7"),
+            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#7197E7"),
+            arrow("#7197E7", "#A77AC4"),
+            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), "#A77AC4"),
+            arrow("#A77AC4", "alpha"),
             --]]
             s.mylayoutbox,
         },
