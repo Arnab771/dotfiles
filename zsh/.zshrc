@@ -110,7 +110,6 @@ source $ZSH/oh-my-zsh.sh
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 colorscript random
-#~/.random_image
 theme.sh dracula
 
 function update(){
