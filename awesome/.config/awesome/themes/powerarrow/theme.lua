@@ -19,14 +19,14 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "JetBrains Mono Medium 10"
 theme.fg_normal                                 = "#FFFFFFB3"
-theme.fg_focus                                  = "#A77AC4B3"
+theme.fg_focus                                  = "#7c46a0B3"
 theme.fg_urgent                                 = "#b74822B3"
 theme.bg_normal                                 = "#282a36B3"
 theme.bg_focus                                  = "#FF79C6B3"
 theme.bg_urgent                                 = "#3F3F3FB3"
 theme.taglist_fg_focus                          = "#282a36B3"
 theme.tasklist_bg_focus                         = "#000000B3"
-theme.tasklist_fg_focus                         = "#A77AC4B3"
+theme.tasklist_fg_focus                         = "#7c46a0B3"
 theme.border_width                              = dpi(2)
 theme.border_normal                             = "#282a36B3"
 theme.border_focus                              = "#F07178B3"
@@ -242,7 +242,7 @@ local bat = lain.widget.bat({
     settings = function()
         if bat_now.status and bat_now.status ~= "N/A" then
             if bat_now.ac_status == 1 then
-                widget:set_markup(markup.font(theme.font, " AC "))
+            widget:set_markup(markup.font(theme.font, " " .. bat_now.perc .. "% "))
                 baticon:set_image(theme.widget_ac)
                 return
             elseif not bat_now.perc and tonumber(bat_now.perc) <= 5 then
@@ -364,23 +364,23 @@ function theme.at_screen_connect(s)
             --]]
             -- using separators
             
-            arrow("alpha", "#7197E7"),
-            wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#7197E7"),
-            arrow("#7197E7", "#A77AC4"),
-            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#A77AC4"),
-            arrow("#A77AC4", "#7197E7"),
-            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#7197E7"),
-            arrow("#7197E7", "#A77AC4"),
-            wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#A77AC4"),
-            arrow("#A77AC4", "#7197E7"),
-            wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#7197E7"),
-            arrow("#7197E7", "#A77AC4"),
-            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#A77AC4"),
-            arrow("#A77AC4", "#7197E7"),
-            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#7197E7"),
-            arrow("#7197E7", "#A77AC4"),
-            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), "#A77AC4"),
-            arrow("#A77AC4", "alpha"),
+            arrow("alpha", "#3b6ede"),
+            wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#3b6ede"),
+            arrow("#3b6ede", "#7c46a0"),
+            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#7c46a0"),
+            arrow("#7c46a0", "#3b6ede"),
+            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#3b6ede"),
+            arrow("#3b6ede", "#7c46a0"),
+            wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#7c46a0"),
+            arrow("#7c46a0", "#3b6ede"),
+            wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#3b6ede"),
+            arrow("#3b6ede", "#7c46a0"),
+            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#7c46a0"),
+            arrow("#7c46a0", "#3b6ede"),
+            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#3b6ede"),
+            arrow("#3b6ede", "#7c46a0"),
+            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), "#7c46a0"),
+            arrow("#7c46a0", "alpha"),
             --]]
             s.mylayoutbox,
         },
