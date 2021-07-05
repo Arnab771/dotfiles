@@ -265,7 +265,10 @@ globalkeys = mytable.join(
     -- X screen locker
     awful.key({ altkey, "Control" }, "l", function () awful.util.spawn("betterlockscreen -l dim") end,
               {description = "lock screen", group = "hotkeys"}),
-
+          
+    -- Run Ranger
+    awful.key({ altkey, "Control" }, "f", function () awful.util.spawn("alacritty -e ranger") end,
+              {description = "Launch Ranger", group="launcher"}),
     -- Show help
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -806,7 +809,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart applications
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("feh --bg-fill ~/Pictures/wallpaper/923275.jpg")
+awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("locker")
---awful.spawn.with_shell("battery_full_alert")
 awful.spawn.with_shell("kdeconnect-indicator")
