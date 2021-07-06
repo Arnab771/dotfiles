@@ -1,0 +1,64 @@
+#+TITLE: Dotfiles
+#+AUTHOR: Arnab Chakraborty
+
+* Setup
+GNU stow must be installed on the system. After that get to this directory and
+#+begin_src bash
+stow alacrity
+stow flutter
+stow neovim
+stow newsboat
+stow vscode
+stow zsh
+stow mpv
+stow awesome
+stow rofi
+stow picom
+#+end_src
+
+** Zsh
+Install [[https://github.com/ohmyzsh/ohmyzsh/][oh-my-zsh]] and then get [[https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh][zsh-autosuggestions]] and [[https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh][zsh-syntax-highlighting]].
+** VSCode
+Install all extensions
+#+begin_src bash
+code --install-extension azemoh.one-monokai
+code --install-extension Dart-Code.dart-code
+code --install-extension Dart-Code.flutter
+code --install-extension esbenp.prettier-vscode
+code --install-extension GrapeCity.gc-excelviewer
+code --install-extension jeroen-meijer.pubspec-assist
+code --install-extension kisstkondoros.vscode-gutter-preview
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-vscode.cpptools
+code --install-extension PKief.material-icon-theme
+code --install-extension usernamehw.errorlens
+code --install-extension vscodevim.vim
+#+end_src
+
+** Neovim
+Install [[https://github.com/junegunn/vim-plug][vim-plug]].
+** COC Extensions I use
+- coc-markdownlint
+- coc-python
+- coc-css
+- coc-html
+- coc-sh
+- coc-yaml
+- coc-vimlsp
+- coc-flutter
+- coc-explorer
+- coc-tsserver
+- coc-json
+- coc-clangd
+Node and clangd must be installed.
+
+** AwesomeWM
+*** Animations and blur
+To get animation and blur install [[https://github.com/jonaburg/picom][Picom]].
+** Betterlockscreen
+Install [[https://github.com/pavanjadhaw/betterlockscreen#requirements][Betterlockscreen]] in =/usr/local/bin= for using as locker.
+
+** Xidlehook
+Install [[https://github.com/jD91mZM2/xidlehook][xidlehook]] through [[https://nixos.org/guides/install-nix.html][Nix Package Manager]] for automating lock and suspend.
