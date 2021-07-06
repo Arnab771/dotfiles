@@ -1,6 +1,16 @@
 #+TITLE: Dotfiles
 #+AUTHOR: Arnab Chakraborty
 
+* Table of Contents :toc:
+- [[#setup][Setup]]
+  - [[#zsh][Zsh]]
+  - [[#vscode][VSCode]]
+  - [[#neovim][Neovim]]
+  - [[#coc-extensions-i-use][COC Extensions I use]]
+  - [[#awesomewm][AwesomeWM]]
+  - [[#betterlockscreen][Betterlockscreen]]
+  - [[#xidlehook][Xidlehook]]
+
 * Setup
 GNU stow must be installed on the system. After that get to this directory and
 #+begin_src bash
