@@ -328,7 +328,7 @@ globalkeys = mytable.join(
         {description = "focus right", group = "client"}),
 
     -- Menu
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    awful.key({ modkey,           }, "w", function () awful.util.spawn("rofi -show window") end,
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
@@ -696,6 +696,7 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+          "Gnome-calculator",
           "xdman-Main",
           "Veracrypt",
           "Arandr",
