@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -52,6 +52,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-;;(require 'key-chord)
-;;(key-chord-mode t)
-;;(key-chord-define-global "jj" 'evil-normal-state)
+
+;;set jk to normal mode
+(require 'key-chord)
+(key-chord-mode t)
+(key-chord-define-global "jk" 'evil-normal-state)
+
+;; Replace list hyphen with dot
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                        (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+(defun efs/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
