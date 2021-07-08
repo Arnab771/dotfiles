@@ -704,7 +704,6 @@ awful.rules.rules = {
           "Gpick",
           "Kruler",
           "MessageWin",  -- kalarm.
-          "Sxiv",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
@@ -810,6 +809,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart applications
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("locker")
 awful.spawn.with_shell("kdeconnect-indicator")
+awful.spawn.with_shell("kmix")
