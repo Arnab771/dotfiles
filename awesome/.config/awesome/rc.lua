@@ -107,34 +107,36 @@ local editor       = os.getenv("EDITOR") or "emacs"
 local browser      = "firefox"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "", "", "", "", "ﱅ", ""}
+-- awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile,
     awful.layout.suit.tile,
     awful.layout.suit.tile,
     awful.layout.suit.tile,
-    --awful.layout.suit.floating,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
-    --awful.layout.suit.corner.nw,
-    --awful.layout.suit.corner.ne,
-    --awful.layout.suit.corner.sw,
-    --awful.layout.suit.corner.se,
-    --lain.layout.cascade,
-    --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
-    --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center
+    awful.layout.suit.tile,
+    -- awful.layout.suit.floating,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier,
+    -- awful.layout.suit.corner.nw,
+    -- awful.layout.suit.corner.ne,
+    -- awful.layout.suit.corner.sw,
+    -- awful.layout.suit.corner.se,
+    -- lain.layout.cascade,
+    -- lain.layout.cascade.tile,
+    -- lain.layout.centerwork,
+    -- lain.layout.centerwork.horizontal,
+    -- lain.layout.termfair,
+    -- lain.layout.termfair.center
 }
 
 lain.layout.termfair.nmaster           = 3
@@ -261,6 +263,9 @@ globalkeys = mytable.join(
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
     awful.key({ altkey }, "p", function() os.execute("screenshot") end,
               {description = "take a screenshot", group = "hotkeys"}),
+
+    awful.key({"Control", "Shift"}, "w", function() os.execute("nitrogen --set-scaled --random ~/Pictures/wallpaper") end,
+               {description = "change wallapaper", group = "hotkeys"}),
 
     -- X screen locker
     awful.key({ altkey, "Control" }, "l", function () awful.util.spawn("betterlockscreen -l dim") end,
@@ -688,6 +693,44 @@ awful.rules.rules = {
      }
     },
 
+    -- Set Firefox, Brave Browser, Tor Browser to open in Tag 2
+    {
+      rule_any = {
+        class = {"Firefox", "Tor Browser", "Brave-browser"}
+      }, properties = {tag = screen[1].tags[2]}
+    },
+
+
+    -- Set Emacs, VSCode to open in Tag 3
+    {
+      rule_any = {
+        class = {"Emacs", "Code"},
+      }, properties = {tag = screen[1].tags[3]}
+    },
+
+
+    -- Set Spotify, MPV to open in Tag 4
+    {
+      rule_any = {
+        class = {"mpv", "Spotify"},
+      }, properties = {tag = screen[1].tags[4]}
+    },
+
+
+    -- Set Obsidian to open in Tag 5
+    {
+      rule_any = {
+        class = {"obsidian"},
+      }, properties = {tag = screen[1].tags[5]}
+    },
+
+    -- Set Signal, Telegram, Discord to open in Tag 6
+    {
+      rule_any = {
+        class = {"Signal", "TelegramDesktop"},
+      }, properties = {tag = screen[1].tags[6]}
+    },
+
     -- Floating clients.
     { rule_any = {
         instance = {
@@ -726,9 +769,6 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
 
 -- }}}
@@ -808,7 +848,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart applications
 awful.spawn.with_shell("picom")
+awful.spawn.with_shell("nitrogen --set-scaled --random ~/Pictures/wallpaper")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("locker")
 awful.spawn.with_shell("kdeconnect-indicator")
-awful.spawn.with_shell("kmix")
+awful.spawn.with_shell("volumeicon")
