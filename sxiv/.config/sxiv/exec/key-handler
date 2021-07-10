@@ -9,6 +9,6 @@ do
         "C-c")
                 echo -n "$file" | xclip -selection clipboard ;;
         "C-w")
-                ~/dotfiles/scripts/setbg "$file" ;;
+                nitrogen --save --set-scaled "$file" ;;
         esac
 done
