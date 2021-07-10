@@ -16,23 +16,24 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font                                      = "JetBrains Mono Medium 10"
+-- theme.wallpaper                                 = theme.dir .. "/wall.png"
+theme.font                                      = "JetBrainsMono Nerd Font Medium 10"
+theme.taglist_font                              = "Droid Sans Bold 21"
 theme.fg_normal                                 = "#FFFFFFB3"
 theme.fg_focus                                  = "#7c46a0B3"
 theme.fg_urgent                                 = "#b74822B3"
 theme.bg_normal                                 = "#282a36B3"
 theme.bg_focus                                  = "#FF79C6B3"
 theme.bg_urgent                                 = "#3F3F3FB3"
-theme.taglist_fg_focus                          = "#282a36B3"
-theme.tasklist_bg_focus                         = "#000000B3"
-theme.tasklist_fg_focus                         = "#7c46a0B3"
+theme.taglist_bg_focus                          = "#282a36B3"
+theme.tasklist_bg_focus                         = "#000000"
+theme.tasklist_fg_focus                         = "#7c46a0"
 theme.border_width                              = dpi(2)
-theme.border_normal                             = "#282a36B3"
-theme.border_focus                              = "#F07178B3"
-theme.border_marked                             = "#CC9393B3"
-theme.titlebar_bg_focus                         = "#3F3F3FB3"
-theme.titlebar_bg_normal                        = "#3F3F3FB3"
+theme.border_normal                             = "#282a36"
+theme.border_focus                              = "#F07178"
+theme.border_marked                             = "#CC9393"
+theme.titlebar_bg_focus                         = "#3F3F3F"
+theme.titlebar_bg_normal                        = "#3F3F3F"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
@@ -77,7 +78,7 @@ theme.widget_mail_on                            = theme.dir .. "/icons/mail_on.p
 theme.widget_task                               = theme.dir .. "/icons/task.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = dpi(14)
+theme.useless_gap                               = 14
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -309,14 +310,57 @@ function theme.at_screen_connect(s)
     s.quake = lain.util.quake({ app = awful.util.terminal })
 
     -- If wallpaper is a function, call it with the screen
-    local wallpaper = theme.wallpaper
-    if type(wallpaper) == "function" then
-        wallpaper = wallpaper(s)
-    end
-    gears.wallpaper.maximized(wallpaper, s, true)
+    -- local wallpaper = theme.wallpaper
+    -- if type(wallpaper) == "function" then
+    --     wallpaper = wallpaper(s)
+    -- end
+    -- gears.wallpaper.maximized(wallpaper, s, true)
 
     -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts)
+
+    -- awful.tag.add("1",{
+    --                   selected = true,
+    --                   layout = awful.layout.layouts[1],
+    --                   screen = s,
+    --                   icon = theme.awesome_icon ,
+    --                   icon_only = true,
+    -- })
+
+    -- awful.tag.add("2", {
+    --                   layout = awful.layout.layouts[1],
+    --                   screen = s,
+    --                   icon = theme.dir .. "/icons/brave.svg",
+    --                   icon_only = true
+    -- })
+
+    -- awful.tag.add("3", {
+    --                   layout = awful.layout.layouts[1],
+    --                   screen = s,
+    --                   icon = theme.dir .. "/icons/folder.svg",
+    --                   icon_only = true
+    -- })
+
+    -- awful.tag.add("4", {
+    --                   layout = awful.layout.layouts[1],
+    --                   screen = s,
+    --                   icon = theme.dir .. "/icons/code-braces.svg",
+    --                   icon_only = true
+    -- })
+
+    -- awful.tag.add("5", {
+    --                   layout = awful.layout.layouts[1],
+    --                   screen = s,
+    --                   icon = theme.dir .. "/icons/music.svg",
+    --                   icon_only = true
+    -- })
+
+    -- awful.tag.add("6", {
+    --                   layout = awful.layout.layouts[1],
+    --                   screen = s,
+    --                   icon = theme.dir .. "/icons/forum.svg",
+    --                   icon_only = true
+    -- })
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -330,10 +374,10 @@ function theme.at_screen_connect(s)
                            awful.button({}, 4, function () awful.layout.inc( 1) end),
                            awful.button({}, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
+    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons, {spacing = 15})
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(21), bg = theme.bg_normal, fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 24, bg = theme.bg_normal, fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
