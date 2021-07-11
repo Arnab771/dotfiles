@@ -1,4 +1,0 @@
-#!/bin/sh
-rm ~/.config/awesome/themes/powerarrow/wall.png
-cp $1 ~/.config/awesome/themes/powerarrow/wall.png
-echo 'awesome.restart()' | awesome-client
