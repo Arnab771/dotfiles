@@ -107,8 +107,8 @@ local editor       = os.getenv("EDITOR") or "emacs"
 local browser      = "firefox"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "", "", "", "", "ﱅ", ""}
--- awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "", "", "", "", "", ""}
+-- awful.util.tagnames = { "SYS", "WWW", "DEV", "MED", "NOTE", "CHAT" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile,
@@ -264,8 +264,25 @@ globalkeys = mytable.join(
     awful.key({ altkey }, "p", function() os.execute("screenshot") end,
               {description = "take a screenshot", group = "hotkeys"}),
 
+    -- Choose random new wallpaper
     awful.key({"Control", "Shift"}, "w", function() os.execute("nitrogen --set-scaled --random ~/Pictures/wallpaper") end,
                {description = "change wallapaper", group = "hotkeys"}),
+
+    -- Choose config from list of configs through rofi
+    awful.key({modkey, altkey}, "e", function() os.execute("~/dotfiles/scripts/editconfig") end,
+               {description = "Edit Configs", group = "hotkeys"}),
+
+    -- Search using different search engines with rofi
+    awful.key({modkey, altkey}, "w", function() os.execute("~/dotfiles/scripts/websearch") end,
+               {description = "Search the Web", group = "hotkeys"}),
+
+    -- Launch reddit with rofi
+    awful.key({modkey, altkey}, "r", function() os.execute("~/dotfiles/scripts/reddit") end,
+               {description = "Launch Reddit with rofi", group = "hotkeys"}),
+
+    -- Show Bookmarks
+    awful.key({modkey, altkey}, "b", function() os.execute("~/dotfiles/scripts/bookmarks") end,
+               {description = "Show bookmarks", group = "hotkeys"}),
 
     -- X screen locker
     awful.key({ altkey, "Control" }, "l", function () awful.util.spawn("betterlockscreen -l dim") end,
@@ -709,10 +726,11 @@ awful.rules.rules = {
     },
 
 
-    -- Set Spotify, MPV to open in Tag 4
+    -- Set Spotify, MPV, mocp to open in Tag 4
     {
       rule_any = {
         class = {"mpv", "Spotify"},
+        name = {"mocp"}
       }, properties = {tag = screen[1].tags[4]}
     },
 
@@ -848,7 +866,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart applications
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("nitrogen --set-scaled --random ~/Pictures/wallpaper")
+-- awful.spawn.with_shell("nitrogen --set-scaled --random ~/Pictures/wallpaper")
+awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("locker")
 awful.spawn.with_shell("kdeconnect-indicator")
