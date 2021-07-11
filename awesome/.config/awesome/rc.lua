@@ -269,19 +269,19 @@ globalkeys = mytable.join(
                {description = "change wallapaper", group = "hotkeys"}),
 
     -- Choose config from list of configs through rofi
-    awful.key({modkey, altkey}, "e", function() os.execute("~/dotfiles/scripts/editconfig") end,
+    awful.key({modkey, altkey}, "e", function() os.execute("~/Documents/Code/scripts/editconfig") end,
                {description = "Edit Configs", group = "hotkeys"}),
 
     -- Search using different search engines with rofi
-    awful.key({modkey, altkey}, "w", function() os.execute("~/dotfiles/scripts/websearch") end,
+    awful.key({modkey, altkey}, "w", function() os.execute("~/Documents/Code/scripts/websearch") end,
                {description = "Search the Web", group = "hotkeys"}),
 
     -- Launch reddit with rofi
-    awful.key({modkey, altkey}, "r", function() os.execute("~/dotfiles/scripts/reddit") end,
+    awful.key({modkey, altkey}, "r", function() os.execute("~/Documents/Code/scripts/reddit") end,
                {description = "Launch Reddit with rofi", group = "hotkeys"}),
 
     -- Show Bookmarks
-    awful.key({modkey, altkey}, "b", function() os.execute("~/dotfiles/scripts/bookmarks") end,
+    awful.key({modkey, altkey}, "b", function() os.execute("~/Documents/Code/scripts/bookmarks") end,
                {description = "Show bookmarks", group = "hotkeys"}),
 
     -- X screen locker

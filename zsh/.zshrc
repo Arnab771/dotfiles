@@ -129,7 +129,7 @@ function downloadPswd(){
 
 
 
-alias organize-downloads='~/dotfiles/scripts/organize-downloads'
+alias organize-downloads='~/Documents/Code/scripts/organize-downloads'
 alias yt-audio='youtube-dl -i --extract-audio --audio-format mp3 --audio-quality 0'
 alias mnt-encrypted='veracrypt /home/arnab/.volume /media/veracrypt1'
 alias private-brave='firejail --nonewprivs --private --private-dev --private-tmp brave-browser'
@@ -142,12 +142,12 @@ alias vpnd='sudo protonvpn d'
 alias vpns='protonvpn status'
 alias battery_info='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias adl='adl -p celluloid'
-alias random-rename='~/dotfiles/scripts/random-rename'
+alias random-rename='~/Documents/Code/scripts/random-rename'
 alias btop='bpytop'
 alias v='nvim'
 alias nnn='nnn -a'
 alias yd='youtube-dl'
-alias setbg='~/dotfiles/scripts/setbg'
+alias setbg='~/Documents/Code/scripts/setbg'
 alias e='emacs'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
