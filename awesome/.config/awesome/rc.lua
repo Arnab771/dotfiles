@@ -103,11 +103,11 @@ local altkey       = "Mod1"
 local terminal     = "alacritty"
 local vi_focus     = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
-local editor       = os.getenv("EDITOR") or "emacs"
-local browser      = "firefox"
+local editor       = os.getenv("EDITOR") or "code"
+local browser      = "brave-browser"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "", "", "", "", "", ""}
+awful.util.tagnames = { "", "", "", "", "", ""}
 -- awful.util.tagnames = { "SYS", "WWW", "DEV", "MED", "NOTE", "CHAT" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -710,10 +710,10 @@ awful.rules.rules = {
      }
     },
 
-    -- Set Firefox, Brave Browser, Tor Browser to open in Tag 2
+    -- Set Firefox, Brave Browser, Tor Browser, Google Chrome to open in Tag 2
     {
       rule_any = {
-        class = {"Firefox", "Tor Browser", "Brave-browser"}
+        class = {"Firefox", "Tor Browser", "Brave-browser", "Google-chrome"}
       }, properties = {tag = screen[1].tags[2]}
     },
 
@@ -745,7 +745,7 @@ awful.rules.rules = {
     -- Set Signal, Telegram, Discord to open in Tag 6
     {
       rule_any = {
-        class = {"Signal", "TelegramDesktop"},
+        class = {"Signal", "TelegramDesktop", "discord"},
       }, properties = {tag = screen[1].tags[6]}
     },
 
@@ -774,6 +774,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+          "Picture in picture"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -867,7 +868,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart applications
 awful.spawn.with_shell("picom")
 -- awful.spawn.with_shell("nitrogen --set-scaled --random ~/Pictures/wallpaper")
-awful.spawn.with_shell("nitrogen --restore")
+-- awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("variety")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("locker")
 awful.spawn.with_shell("kdeconnect-indicator")
