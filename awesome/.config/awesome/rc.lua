@@ -1,10 +1,15 @@
---[[
+    --___                     __
+   --/   |  _________  ____ _/ /_
+  --/ /| | / ___/ __ \/ __ `/ __ \
+ --/ ___ |/ /  / / / / /_/ / /_/ /
+--/_/  |_/_/  /_/ /_/\__,_/_.___/
 
-     Awesome WM configuration template
-     github.com/lcpz
-
---]]
-
+   --________          __              __               __
+  --/ ____/ /_  ____ _/ /___________ _/ /_  ____  _____/ /___  __
+ --/ /   / __ \/ __ `/ //_/ ___/ __ `/ __ \/ __ \/ ___/ __/ / / /
+--/ /___/ / / / /_/ / ,< / /  / /_/ / /_/ / /_/ / /  / /_/ /_/ /
+--\____/_/ /_/\__,_/_/|_/_/   \__,_/_.___/\____/_/   \__/\__, /
+                                                      --/____/
 -- {{{ Required libraries
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -103,7 +108,7 @@ local altkey       = "Mod1"
 local terminal     = "alacritty"
 local vi_focus     = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
-local editor       = os.getenv("EDITOR") or "code"
+local editor       = os.getenv("EDITOR") or "nvim"
 local browser      = "brave-browser"
 
 awful.util.terminal = terminal
@@ -561,7 +566,7 @@ globalkeys = mytable.join(
         {description = "show rofi", group = "launcher"}),
     --]]
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.util.spawn("rofi -show run") end,
+    awful.key({ modkey }, "r", function () awful.util.spawn("rofi -modi drun -show drun -show-icons") end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -867,9 +872,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart applications
 awful.spawn.with_shell("picom")
--- awful.spawn.with_shell("nitrogen --set-scaled --random ~/Pictures/wallpaper")
--- awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("variety")
+--awful.spawn.with_shell("variety")
+awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("locker")
 awful.spawn.with_shell("kdeconnect-indicator")
