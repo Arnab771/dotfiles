@@ -1,3 +1,29 @@
 vscode/.config/Code/User/globalStorage/*
 vscode/.config/Code/User/workspaceStorage/*
 mpv/.config/mpv/watch_later
+moc/.moc/equalizer
+moc/.moc/softmixer
+neovim/.config/nvim/.netrwhist
+newsboat/.newsboat/cache.db.lock
+vscode/.config/Code/Cache
+vscode/.config/Code/CachedData
+vscode/.config/Code/CachedExtensions
+vscode/.config/Code/CachedExtensionVSIXs
+vscode/.config/Code/Code Cache
+vscode/.config/Code/Cookies
+vscode/.config/Code/Cookies-journal
+vscode/.config/Code/Crash Reports
+vscode/.config/Code/Backups
+vscode/.config/Code/GPUCache/
+vscode/.config/Code/Local Storage/
+vscode/.config/Code/Network Persistent State
+vscode/.config/Code/QuotaManager
+vscode/.config/Code/QuotaManager-journal
+vscode/.config/Code/Service Worker/
+vscode/.config/Code/Session Storage/
+vscode/.config/Code/TransportSecurity
+vscode/.config/Code/exthost Crash Reports/
+vscode/.config/Code/languagepacks.json
+vscode/.config/Code/logs/
+vscode/.config/Code/machineid
+vscode/.config/Code/storage.json
